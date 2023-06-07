@@ -1,23 +1,23 @@
 # Labs_Scheduling_System
 In this project a scheduling system is implemented in Prolog to assign the weekly labs of a course to the available TAs
 
-The following should be noted:
--Each lab should be assigned exactly one TA.
+The following should be noted:<br />
+-Each lab should be assigned exactly one TA.<br />
 -Each TA has a teaching load (the number of labs they are required to teach per
-week).
+week).<br />
 -Each TA should not be assigned more labs than their teaching load (but can get
-less load).
+less load).<br />
 -The number of slots assigned to each TA per day must not exceed a particular
-specified number.
+specified number.<br />
 
-The project uses the following predicates:
+The project uses the following predicates:<br />
 
-a) week_schedule(WeekSlots,TAs,DayMax,WeekSched) such that: 
+a) week_schedule(WeekSlots,TAs,DayMax,WeekSched) such that: <br />
 • WeekSlots is a list of 6 lists with each list representing a working day from
 Saturday till Thursday. A list representing a day is composed of 5 numbers
-representing the 5 slots in the day. The number at position i in a day list represents the number of parallel labs at slot i.
+representing the 5 slots in the day. The number at position i in a day list represents the number of parallel labs at slot i.<br />
 
-b) day_schedule(DaySlots,TAs,RemTAs,Assignment) such that:
+b) day_schedule(DaySlots,TAs,RemTAs,Assignment) such that:<br />
 • DaySlots is a list of 5 numbers representing the number of parallel labs in the
 5 slots of the day.
 • TAs and RemTAs are lists of TA structures.
@@ -28,21 +28,21 @@ available DaySlots and list of course TAs, while RemTAs is the list of updated T
 2
 structures after the day assignment.
 
-c) max_slots_per_day(DaySched,Max) such that:
+c) max_slots_per_day(DaySched,Max) such that:<br />
 • DaySched is a day schedule showing the assignment of the TAs in every slot.
 • Max is a number showing the maximum amount of labs a TA can be assigned
 in a day.
-max_slots_per_day/2 succeeds if no TA is assigned more than Max labs in DaySched.
+max_slots_per_day/2 succeeds if no TA is assigned more than Max labs in DaySched.<br />
 
-d) slot_assignment(LabsNum,TAs,RemTAs,Assignment) such that:
+d) slot_assignment(LabsNum,TAs,RemTAs,Assignment) such that: <br />
 • LabsNum is a number representing the amount of parallel labs in this slot.
 • TAs is a list of TAs structures.
 • RemTAs is the updated list of TAs structures after the assignment to this slot.
 • Assignment is a list of the names of TAs in TAs assigned to this slot.
 slot_assignment/4 succeeds if Assignment is a possible assignment to a single
-slot with LabsNum labs and RemTAs is the list of modified TAs after the assignment.
+slot with LabsNum labs and RemTAs is the list of modified TAs after the assignment.<br />
 
-e) ta_slot_assignment(TAs,RemTAs,Name) such that:
+e) ta_slot_assignment(TAs,RemTAs,Name) such that:<br />
 • TAs and RemTAs are lists of TA structures
 • Name is a name of a TA in TAs.
 ta_slot_assignment/3 succeeds if RemTAs is the list of TA structures resulting
